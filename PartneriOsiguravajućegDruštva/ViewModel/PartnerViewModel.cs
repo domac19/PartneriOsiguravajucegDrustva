@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PartneriOsiguravajućegDruštva.Models
+namespace PartneriOsiguravajućegDruštva.ViewModel
 {
-    public class Partner
+    public class PartnerViewModel
     {
         public string FirstName { get; set; }
 
@@ -16,21 +16,21 @@ namespace PartneriOsiguravajućegDruštva.Models
         public int PartnerNumber { get; set; }
 
         public int CroatianPIN { get; set; }
-        
+
         public int PartnerTypeId { get; set; }
-        
+
         public DateTime CreatedAtUtc { get; set; }
-        
+
         public string CreateByUser { get; set; }
-        
+
         public bool IsForeign { get; set; }
-        
+
         public int ExternalCode { get; set; }
-        
+
         public string Gender { get; set; }
-        
+
         public string BrojPolice { get; set; }
-        
+
         public decimal IznosPolice { get; set; }
     }
 }
