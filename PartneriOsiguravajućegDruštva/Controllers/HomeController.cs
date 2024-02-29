@@ -23,11 +23,12 @@ namespace PartneriOsiguravajućegDruštva.Controllers
                 connection.Open();
 
                 // Example query using Dapper
-                var result = connection.Query<Partner>("SELECT * FROM Partner WHERE Id = @Id", new { Id = 1 });
-                
+                var result = connection.Query<Partner>("SELECT * FROM Partner");
+
                 var userViewModel = result.Select(user => new PartnerViewModel
                 {
                     FirstName = user.FirstName,
+                    LastName = user.LastName,
                     Address = user.Address,
                     PartnerNumber = user.PartnerNumber,
                     CroatianPIN = user.CroatianPIN,
@@ -38,10 +39,15 @@ namespace PartneriOsiguravajućegDruštva.Controllers
                     ExternalCode = user.ExternalCode,
                     Gender = user.Gender,
                     IsForeign = user.IsForeign
-                }).FirstOrDefault();
+                });
 
-                return View(userViewModel);
+                return View(userViewModel.ToList());
             }  
+        }
+
+        public ActionResult Create()
+        {
+            return View();
         }
 
         public ActionResult About()

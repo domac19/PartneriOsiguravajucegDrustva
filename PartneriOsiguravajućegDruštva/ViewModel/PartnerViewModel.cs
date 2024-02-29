@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
 namespace PartneriOsiguravajućegDruštva.ViewModel
 {
     public class PartnerViewModel
@@ -11,7 +7,7 @@ namespace PartneriOsiguravajućegDruštva.ViewModel
 
         public string LastName { get; set; }
 
-        public string Address { get; set; }
+        public string Address { get; set; } //
 
         public int PartnerNumber { get; set; }
 
@@ -21,16 +17,18 @@ namespace PartneriOsiguravajućegDruštva.ViewModel
 
         public DateTime CreatedAtUtc { get; set; }
 
-        public string CreateByUser { get; set; }
+        public string CreateByUser { get; set; } //
 
         public bool IsForeign { get; set; }
 
-        public int ExternalCode { get; set; }
+        public int ExternalCode { get; set; } //
 
         public string Gender { get; set; }
 
         public string BrojPolice { get; set; }
 
         public decimal IznosPolice { get; set; }
+
+        public string FullName => $"{FirstName} {LastName}";
     }
 }

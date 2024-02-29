@@ -1,20 +1,76 @@
-﻿@model PartneriOsiguravajućegDruštva.ViewModel.PartnerViewModel
+﻿@model IEnumerable<PartneriOsiguravajućegDruštva.ViewModel.PartnerViewModel>
 
 @{
     ViewBag.Title = "Home Page";
 }
 
-<h2>User Details</h2>
-<p>Ime: @Model.FirstName</p>
-<p>Prezime: @Model.LastName</p>
-<p>Adresa: @Model.Address</p>
-<p>PartnerNumber: @Model.PartnerNumber</p>
-<p>OIB: @Model.CroatianPIN</p>
-<p>PartnerTypeId: @Model.PartnerTypeId</p>
-<p>CreatedByUtc: @Model.CreatedAtUtc</p>
-<p>CreatedByUser: @Model.CreateByUser</p>
-<p>IsForeign: @Model.IsForeign</p>
-<p>External Code: @Model.ExternalCode</p>
-<p>Gender: @Model.Gender</p>
-<p>Broj police: @Model.BrojPolice</p>
-<p>Iznos police: @Model.IznosPolice</p>
+<h2>Partneri</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PartnerNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CroatianPIN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PartnerTypeId)
+        </th>
+        <td>
+            @Html.DisplayNameFor(model => model.CreatedAtUtc)
+        </td>
+        <th>
+            @Html.DisplayNameFor(model => model.IsForeign)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrojPolice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IznosPolice)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PartnerNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CroatianPIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PartnerTypeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAtUtc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsForeign)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrojPolice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IznosPolice)
+            </td>
+
+            <td>
+            </td>
+        </tr>
+    }
+
+</table>
